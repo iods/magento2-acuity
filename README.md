@@ -1,6 +1,6 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-by-neckbeards.svg)](http://forthebadge.com)
-[![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg?style=for-the-badge)](https://github.com/iods/skin/issues)
 [![forthebadge](http://forthebadge.com/images/badges/fuck-it-ship-it.svg)](http://forthebadge.com)
+[![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg?style=for-the-badge)](https://github.com/iods/skin/issues)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/iods/skin/LICENSE)
 
 Drupal Skin
