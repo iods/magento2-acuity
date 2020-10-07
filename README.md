@@ -1,57 +1,58 @@
+<h2 align="center">iods/magento2-acuity</h2>
 [![forthebadge](http://forthebadge.com/images/badges/built-by-neckbeards.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/fuck-it-ship-it.svg)](http://forthebadge.com)
-[![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg?style=for-the-badge)](https://github.com/iods/skin/issues)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/iods/skin/LICENSE)
 
-Drupal Skin
-============
+Acuity - for Magento
+====================
 
-A base theme project for quickly starting projects in Drupal 8.
+A base theme project for quickly getting started in Magento 2.
 
 
 Facts
 -----
 
  * Version: 0.1.0 (Development)
- * [Repository on Github](https://github.com/iods/skin)
+ * [Repository on Github](https://github.com/iods/magento2-acuity)
 
 
 Description
 -----------
 
-Another boilerplate for Drupal 8 to get quickly up and running while keeping the
+~~Another boilerplate for Drupal 8 to get quickly up and running while keeping the
 environment clean, maintainable, and well approachable. It may have it's strengths
 and weaknesses, but the goal here is not to focus on the perfect solutions, but
-rather, solutions to combine the best balance of value for time.
+rather, solutions to combine the best balance of value for time.~~
 
+After sticking w/ what I love, this is MY Magento 2 theme boilerplate to get quickly up 
+and running while keeping the environment clean, maintainable, and well approachable. It 
+may have its strengths and weaknesses, but the goal here is not to focus on the perfect 
+solutions, but rather, solutions to combine the best balance of value for time.
 
 Requirements
 ------------
 
  * [Git](http://git-scm.com)
- * [Drupal 8](http://drupal.org)
 
 
-##Developer
+Developer
 ---------
 
 **Rye Miller**
 
  * [GitHub](http://github.com/iods/)
- * [BitBucket](http://bitbucket.org/adarkstar/)
  * [@ryemiller](https://twitter.com/ryemiller)
 
 
 Support
 -------
 
-If you have any issues with this project, open an issue on [Github](https://github.com/iods/skin/issues)
+The best way to contribute is to contact the [developer](#Developer).
 
 
 Contribution
 ------------
 
-he best way to contribute is to contact the [developer](#Developer).
+The best way to contribute is to contact the [developer](#Developer).
 
 Here is a **tl;dr** of how to get started:
 
@@ -72,13 +73,9 @@ maintained under [the Semantic Versioning guidelines](http://semver.org/).
 Resources
 ---------
 
- * [Drupal](http://drupal.org)
+ * [Magento DevDocs](http://devdocs.magento.com)
 
 
-Acknowledgements
-----------------
-
-Thank you to [Atlassian](http://www.atlassian.com) for being such an honest and innovative company.
 
 
 License
@@ -90,4 +87,4 @@ This project/code is released under [the MIT license](https://github.com/iods/sk
 Copyright
 ---------
 
-(c) 2017 Rye Miller. All Rights Reserved.
+(c) 2020 Rye Miller. All Rights Reserved.
