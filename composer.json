@@ -1,5 +1,5 @@
 {
-	"name": "iods/theme-acuity",
+	"name": "iods/acuity",
 	"description": "A base theme project for quickly getting started in Magento 2.",
 	"type": "magento2-theme",
 	"license": [
@@ -13,6 +13,5 @@
 			"registration.php"
 		]
 	},
-	"version": "0.1.0",
-	"Iods/magento2-acuity": "100.0.*"
+	"version": "0.1.0"
 }
