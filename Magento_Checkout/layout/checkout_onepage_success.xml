@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * A frontend theme package for Magento 2.
+ *
+ * @author    Rye Miller <rye@drkstr.dev>
+ * @copyright Copyright (c) 2021, Rye Miller (https://ryemiller.io)
+ * @license   See LICENSE for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  layout="1column"
+	  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <!-- Move the checkout.registration inside the checkout.success -->
+        <move element="checkout.registration" destination="checkout.success" after="-" />
+        <referenceBlock name="page.main.title" remove="true"/>
+    </body>
+</page>

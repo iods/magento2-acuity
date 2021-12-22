@@ -1,0 +1,300 @@
+// /**
+//  * Copyright © 2015 Studioemma. All rights reserved.
+//  * See ... for license details.
+//  * Enable one-column layout for category grid on mobile
+//  */
+
+//Import all css for catalog sitemap options
+@import 'module/_catalog_sitemap.less';
+
+& when (@media-common = true) {
+
+
+    // Toolbar
+
+    .toolbar-products {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    // End toolbar
+
+
+    .box-tocart {
+        .select-qty {
+            @tocart-input-size: @button__line-height__l + 28px;
+            height: @tocart-input-size + 2px;
+            width: @tocart-input-size + 2px;
+        }
+
+        input#qty {
+            display: none;
+        }
+
+        .small-save-button {
+            padding: 7px 4px;
+
+            .lib-icon-font (
+                @icon-checkmark,
+                @_icon-font-position: after,
+                @_icon-font-color: @primary__color,
+                @_icon-font-size: 23px,
+                @_icon-font-text-hide: true
+            );
+        }
+    }
+
+    .box-tocart .small-save-button {
+        display: none;
+    }
+
+    //
+    //  Sidebar product view
+    //  ---------------------------------------------
+
+    .sidebar {
+        .product-items {
+            .product-item {
+
+                &-info {
+                    &:extend(.abs-add-clearfix all);
+                }
+            }
+        }
+
+        .block.block-compare {
+
+            .block-title {
+
+                > span,
+                > strong {
+                    display: block;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    /* Fix for list view on mobile */
+    .product {
+        &-item {
+            &-info {
+                .page-products & {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    /* hide product actions on recently viewed */
+
+    .block.widget.block-viewed-products-grid {
+
+        .product-item-actions,
+        .product-item-description {
+            display: none;
+        }
+    }
+
+    /* always on 1 line */
+
+    .block.widget.block-viewed-products-grid .products-grid .product-items {
+        display: flex;
+        flex-wrap: wrap;
+
+        .product-item {
+            margin: 0;
+            flex: 0 0 19%;
+            width: 19%;
+            margin-right: 1.25%;
+            margin-left: 0!important;
+
+            &:nth-child(5n) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .product-social-links {
+        text-align: left;
+    }
+}
+
+//
+//  Mobile
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+
+    .column.main {
+        .product {
+            &-items {
+                margin-left: 0;
+            }
+            &-item {
+                padding-left: 0;
+            }
+        }
+    }
+
+    .products-grid .products.list {
+
+        .product-item {
+            width: 100%;
+            margin-bottom: 2rem;
+            margin-left: 0;
+            .lib-clearfix();
+
+            .product-image-photo {
+                width: 100%;
+            }
+
+            .product-image-container {
+                width: 30%!important;
+                float: left;
+            }
+
+            .product-item-details {
+                width: 65%;
+                float: left;
+                margin-left: 5%;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .product {
+        &-item {
+            &-actions {
+                display: block;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .product-item-actions .actions-secondary > .action.tocompare {
+        display: inline-block;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .product {
+        &-item {
+            &-actions {
+                .actions-primary + .actions-secondary {
+                    display: inherit;
+                    width: auto;
+                    padding: 0;
+                }
+
+                .actions-primary {
+                    display: inherit;
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .sidebar {
+        .product-items {
+            .product-item {
+                &-info {
+                    .product-item-photo {
+                        float: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .sidebar {
+        .product-items {
+            .product-item {
+                &-info {
+                    .product-item-photo {
+                        position: static;
+                    }
+                }
+                &-details {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Related products: visual buttons instead of good ol' boring checkboxes */
+& when (@media-common = true) {
+    .block.related {
+        .item {
+            button {
+                position: relative;
+
+                &:after {
+                    font-family: "FontAwesome";
+                    padding-left: @indent__s;
+                    position: absolute;
+                    top: 50%;
+                    right: 8px;
+                    margin-top: -8px;
+                }
+
+                &.toggled {
+                    padding-right: 30px;
+
+                    &:after {
+                        content: "\f00c";
+                    }
+                }
+            }
+
+            .field.choice.related {
+                &.hidden {
+                    display: none;
+                }
+            }
+        }
+
+    }
+}
+
+/* Product stock info */
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .product-info-main .box-tocart, .product-options-bottom .box-tocart {
+        float: left;
+        width: 220px;
+    }
+
+    .product-info-stock {
+        padding: 20px 0 0 20px;
+        overflow: hidden;
+    }
+
+    #product_addtocart_form {
+        .lib-clearer();
+    }
+}
+
+& when (@media-common = true) {
+    /* Fix for list view on mobile */
+    .product {
+        &-item {
+            &-info {
+                width: auto;
+            }
+        }
+    }
+
+    .product-items {
+        .product-item {
+            position: relative;
+        }
+    }
+}
+
+

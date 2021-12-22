@@ -1,0 +1,152 @@
+@import './imports/_limit-content.less'; // General styling for limit content functionality
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    /* Links in messages should be underlined */
+    .messages {
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    .page-footer {
+
+        .footer.content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .block.newsletter {
+                flex: 1 1 auto;
+                width: 100%;
+                max-width: 512px;
+            }
+        }
+    }
+
+    .c-social ul, .footer.content .c-social ul {
+        text-align: center;
+
+        > li {
+            margin: 0 1.2rem .5rem;
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    /*
+    // ---- Mobile breadcrumb styling
+
+    Will only be visible if more than 2 paths are shown
+    Home > Page 1  -> nothing will hapen
+    Home > Page 1 > Page 2 -> only < Page 1 will be shown
+
+    */
+
+    .breadcrumbs {
+
+        /* Show them on mobile (Optimus hides them by default */
+        display: block;
+
+        &.breadcrumbs-mobile--compact{
+            .item{
+
+                // Hide all but the last parent link
+                &:not(.is-mobile-path){
+                    display: none;
+                }
+                &.is-mobile-path {
+
+                    // Hide right breadcrumb arrows if available
+                    &:after {
+                        display: none;
+                        content: '';
+                    }
+
+                    // Add left breadcrumb arrow
+                    .lib-icon-font(
+                        @_icon-font-content: @breadcrumbs-icon__font-content,
+                        @_icon-font: @breadcrumbs-icon__font,
+                        @_icon-font-size: @breadcrumbs-icon__font-size,
+                        @_icon-font-line-height: @breadcrumbs-icon__font-line-height,
+                        @_icon-font-color: @breadcrumbs-icon__font-color,
+                        @_icon-font-margin: @breadcrumbs-icon__font-margin,
+                        @_icon-font-vertical-align: @breadcrumbs-icon__font-vertical-align,
+                        @_icon-font-position: before
+                    );
+
+                    // Rotate arrow 180 degrees to point left
+                    &:before{
+                        .lib-css(transform, rotate(180deg), 1);
+                    }
+                }
+            }
+        }
+    }
+
+    // Fixes for full page layout
+    .page-layout-cms-full-width{
+        main{
+            > .page-title-wrapper,
+            > .page.messages{
+                padding-left: @layout__width-xs-indent;
+                padding-right: @layout__width-xs-indent;
+            }
+        }
+    }
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    // Fixes for full page layout
+    .page-layout-cms-full-width{
+        main{
+            > .page-title-wrapper,
+            > .page.messages{
+                box-sizing: border-box;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: @layout__max-width;
+                padding-left: @layout-indent__width;
+                padding-right: @layout-indent__width;
+                width: auto;
+            }
+        }
+        &.cms-index-index .nav-sections {
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+
+}

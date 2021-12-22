@@ -1,0 +1,435 @@
+@se-credits__color: @link__color;
+@se-credits__text-decoration: none;
+@se-credits__color-hover: #0055FF;
+@se-credits__color-active: @link__active__color;
+@se-credits__color-visited: @link__visited__color;
+
+& when (@media-common = true) {
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Nav home link */
+.navigation {
+    li.home {
+        a {
+            &:before {
+                content: "\f015";
+                font-family: "FontAwesome";
+                font-weight: normal;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+/* Replace breadcrumbs on mobile with previous category link */
+.breadcrumbs {
+    display: none;
+}
+
+    /* SE credits */
+
+    .credits,
+    .footer.content.credits {
+        padding-top: 1em;
+        text-align: center;
+        .se {
+            padding-right: 35px;
+            margin-top: 4px;
+            position: relative;
+            font-size: .75em;
+
+            .lib-link(
+                @_link-color: @se-credits__color,
+                @_link-text-decoration: @se-credits__text-decoration,
+                @_link-color-hover: @se-credits__color-hover,
+                @_link-text-decoration-hover: @se-credits__text-decoration,
+                @_link-color-active: @se-credits__color-active,
+                @_link-text-decoration-active: @se-credits__text-decoration,
+                @_link-color-visited: @se-credits__color-visited,
+                @_link-text-decoration-visited: @se-credits__text-decoration,
+            );
+
+            &:before {
+                content: "";
+                display: block;
+                width: 25px;
+                height: 25px;
+                position: absolute;
+                right: 0;
+                top: -3px;
+                background: transparent url("@{baseDir}images/icons/se-logo.svg") no-repeat;
+                background-size: 25px 25px;
+            }
+            &.white {
+                &:before {
+                    background-image: url("@{baseDir}images/icons/se-logo-white.svg");
+                }
+            }
+        }
+    }
+
+    .footer.content.credits {
+        display: flex;
+        flex-wrap: wrap;
+
+        .se {
+            margin-left: auto;
+        }
+
+        .copyright {
+            margin: 0 0 20px;
+            text-align: right;
+        }
+    }
+
+    .nav-sections-item-content .header-quick-links {
+        margin-top: 1em;
+    }
+
+    .panel.header {
+
+        .header-quick-links {
+            display: none;
+        }
+    }
+}
+
+//
+//  Desktop
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .breadcrumbs {
+        display: block;
+    }
+
+    .header.content .block-search {
+        float: left;
+        margin-left: 40px;
+    }
+
+    header.page-header .panel.wrapper {
+        border-bottom: 0;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+& when (@media-common = true) {
+
+.footer.content {
+    /* Newsletter */
+    .block.newsletter {
+        float: none;
+        width: auto;
+    }
+
+    /* About store */
+    .about-store {
+        text-align: center;
+    }
+
+    /* Payment methods */
+    .payment-methods {
+        margin-top: 25px;
+
+        ul {
+            font-size: 0;
+            text-align: center;
+
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 1rem;
+                margin: 0 5px 5px;
+
+                svg {
+                    width: 70px;
+                    height: 37px; // setting to auto gives strange things in IE9
+                }
+            }
+        }
+    }
+}
+
+}
+
+//
+//  Desktop
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page.bottom .footer {
+        text-align: left;
+    }
+
+    .footer.content {
+        /* Newsletter */
+        .block.newsletter {
+            .actions {
+                display: block;
+                width: auto;
+                margin-top: 5px;
+            }
+        }
+
+        /* About store */
+        .about-store {
+            text-align: left;
+        }
+    }
+
+    /* SE credits */
+
+    .credits,
+    .footer.content.credits {
+        text-align: right;
+    }
+
+    .panel.header {
+
+        .header-quick-links {
+            display: block;
+            float: right;
+
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    margin: 0 1em 0 0;
+                    padding: 0;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .footer.content {
+        /* Newsletter */
+        .block.newsletter {
+            .actions {
+                display: table-cell;
+                width: 1%;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+
+/* Collapsible nav */
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .abs-toggling-title-mobile, .block-collapsible-nav .title {
+        margin: 15px (@indent__base - 5px) 0 (@indent__base - 5px);
+        border: 1px solid @color-gray82;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .block-collapsible-nav {
+        .content {
+            margin: 0 (@indent__base - 5px);
+        }
+    }
+}
+
+
+/* Store USPs */
+
+& when (@media-common = true) {
+
+.store-usp {
+    ul {
+        font-size: 0;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            font-size: 1.4rem;
+            margin: 0 10px 0 0;
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    &.icons {
+        ul {
+            li {
+                &:before {
+                    content: "\f00c";
+                    font-family: "FontAwesome";
+                    display: inline-block;
+                    padding-right: 7px;
+                    color: @color-gray68;
+                }
+            }
+        }
+    }
+}
+
+.footer.content {
+    .store-usp {
+        margin-bottom: 20px;
+
+        ul li {
+            margin: 0 10px 5px 0;
+            display: block;
+        }
+    }
+}
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .store-usp,
+    .panel.header .switcher {
+        float: left;
+    }
+}
+
+/* Footer language */
+
+& when (@media-common = true) {
+
+.footer.content {
+    .language-footer {
+        text-align: center;
+        display: inline-block;
+
+        .switcher-label {
+            cursor: pointer;
+            border: 1px solid @color-gray68;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            padding: 6px 12px;
+            display: inline-block;
+
+            &:after {
+                content: "\f078";
+                font-family: "FontAwesome";
+                display: inline-block;
+                padding-left: 7px;
+                color: @primary__color;
+            }
+        }
+        .switcher-dropdown {
+            display: none;
+        }
+
+        &.open {
+            .switcher-label {
+                -webkit-border-bottom-right-radius: 0;
+                -webkit-border-bottom-left-radius: 0;
+                -moz-border-radius-bottomright: 0;
+                -moz-border-radius-bottomleft: 0;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+                border-bottom: none;
+
+                &:after {
+                    content: "\f077";
+                }
+            }
+            .switcher-dropdown {
+                display: block;
+                border: 1px solid @color-gray68;
+                border-top: none;
+                -webkit-border-bottom-right-radius: 4px;
+                -webkit-border-bottom-left-radius: 4px;
+                -moz-border-radius-bottomright: 4px;
+                -moz-border-radius-bottomleft: 4px;
+                border-bottom-right-radius: 4px;
+                border-bottom-left-radius: 4px;
+                padding: 6px 12px;
+            }
+        }
+    }
+}
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .footer.content {
+        .language-footer {
+            display: none;
+        }
+    }
+}
+
+/* Mobile pager */
+
+& when (@media-common = true) {
+
+.mobile-pager {
+    &:extend(.abs-add-clearfix all);
+    text-align: left;
+
+    select {
+        width: auto;
+        margin-right: @indent__base;
+    }
+
+    a {
+        float: right;
+        line-height: 30px;
+
+        &.action.next {
+            margin-left: @indent__xs;
+        }
+
+        &.action.previous {
+            margin-right: 0;
+        }
+    }
+}
+
+}
+
+//
+//    Mobile
+//--------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-main {
+        .account &,
+        .cms-privacy-policy & {
+            padding-top: 50px;
+        }
+    }
+}
+
+@import '_forms-extend.less';
+@import '_utilities-extend.less';
+@import '_typography-extend.less';
+@import '_font-awesome.less'; // Standard font-awesome
+@import '_optimus-icons.less'; // optimus icon font
+@import '_cms-styles.less';  // Some handy styles for use in content
+@import '_responsiveslides.less'; // responsive slides css
+@import '_magnific-popup.less'; // magnific popup css
+@import '_flexslider.less'; // flexslider css
+@import '_sticky-header.less'; // stickyheader css
+@import '_sitemap-dropdown.less'; // sitemap dropdown css
+@import '_colm-basic.less'; // Basic Colm css (no mixin)
+@import '_colm-mixin.less'; // Colm mixin
+@import '_grid-basic.less'; // Basic Grid css (no mixin)
+@import '_account-dropdown.less'; // account dropdown
+
+
+
+

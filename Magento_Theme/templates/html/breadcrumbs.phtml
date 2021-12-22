@@ -1,0 +1,45 @@
+<?php
+
+/*
+// ---- Mobile breadcrumb styling
+Will only be visible if more than 2 paths are shown
+Home > Page 1  -> nothing will hapen
+Home > Page 1 > Page 2 -> only < Page 1 will be shown
+*/
+
+if ($crumbs && is_array($crumbs)) :
+
+// Count number of paths
+$nofItems = count($crumbs);
+
+// Only set class to hide items on mobile if more than 2 paths
+$bNeedsMobileCompact = false;
+if($nofItems > 2):
+    $bNeedsMobileCompact = true;
+endif;
+
+?>
+<div class="breadcrumbs <?=($bNeedsMobileCompact)?'breadcrumbs-mobile--compact':''?>">
+
+    <ul class="items">
+        <?php
+        $i = 1;
+        foreach ($crumbs as $crumbName => $crumbInfo) : ?>
+            <li class="item <?= $block->escapeHtmlAttr($crumbName) ?> <?=($i == $nofItems - 1)?'is-mobile-path':''?>">
+            <?php if ($crumbInfo['link']) : ?>
+                <a href="<?= $block->escapeUrl($crumbInfo['link']) ?>"
+                   title="<?= $block->escapeHtmlAttr($crumbInfo['title']) ?>">
+                    <?= $block->escapeHtml($crumbInfo['label']) ?>
+                </a>
+            <?php elseif ($crumbInfo['last']) : ?>
+                <strong><?= $block->escapeHtml($crumbInfo['label']) ?></strong>
+            <?php else : ?>
+                <?= $block->escapeHtml($crumbInfo['label']) ?>
+            <?php endif; ?>
+            </li>
+        <?php
+        $i++;
+        endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

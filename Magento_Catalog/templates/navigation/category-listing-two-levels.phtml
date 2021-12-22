@@ -1,0 +1,55 @@
+<?php
+/**
+ * Category listing template
+ * Copyright © Studio Emma. All rights reserved.
+ *
+ * Usage in a cms block or page
+ *
+ * {{block class="StudioEmma\Optimus\Block\Navigation" template="Magento_Catalog::navigation/category-listing-two-levels.phtml" title="Lorem ipsum" column_count="4" selected_parent_category_id="3"}}
+ *
+ * {{block class="StudioEmma\Optimus\Block\Navigation" template="Magento_Catalog::navigation/category-listing-two-levels.phtml" title="Lorem ipsum" column_count="3" selected_category_ids="3,4,5" }}
+ *
+ *
+ */
+
+$categories = $this->getCategories();
+
+if ($this->categoriesCount() > 0):
+
+    if (!empty($this->getCssClass())): ?>
+        <div class="<?= $this->getCssClass()?>">
+    <?php endif; ?>
+        <?php if (!empty($block->getTitle())): ?>
+            <h2><?php echo $block->getTitle(); ?></h2>
+        <?php endif; ?>
+            <nav role="navigation">
+            <?php if ($this->bShowColumns()): ?>
+                <div class="se-grid">
+            <?php endif; ?>
+                <?php foreach ($categories as $category):?>
+                    <div class="se-col se-col1-<?= $this->columnCount() ?>">
+                        <h3 class="category category-<?= $category->getId(); ?>">
+                            <a class="category-link" href="<?= $category->getUrl() ?>" title="<?= $this->escapeHtml($category->getName()) ?>">
+                                <span><?= $this->escapeHtml($category->getName()) ?></span>
+                            </a>
+                        </h3>
+                        <ul class="catalog-navigation">
+                        <?php foreach ($this->getSubcategories($category) as $subcategory): ?>
+                            <li class='subcategory subcategory-<?= $subcategory->getId() ?>'>
+                                <a class="subcategory-link" href="<?= $subcategory->getUrl() ?>" title="<?= $this->escapeHtml($subcategory->getName()) ?>">
+                                    <span><?= $this->escapeHtml($subcategory->getName()) ?></span>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endforeach; ?>
+            <?php if ($this->bShowColumns()): ?>
+                </div>
+            <?php endif; ?>
+            </nav>
+    <?php if(!empty($this->getCssClass())): ?>
+        </div>
+    <?php endif; ?>
+
+<?php endif; ?>
