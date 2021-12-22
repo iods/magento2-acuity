@@ -1,0 +1,260 @@
+/**
+ * Copyright © 2015 Studio Emma. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+
+//
+//  Only variable overrides
+//  _____________________________________________
+
+@screen__m: 769px;
+@total-columns: 9;
+@p-gap: 10px; // colm vertical spacing
+@m-bottom: 10px; // colm horizontal spacing
+@centered-icon-block-border: 1px solid black;
+@centered-icon-block-padding: 10px;
+@sitemap-dropdown-color: #333;
+@p__margin-bottom: 15px;
+
+// fix wrong gray color - was more greenish
+@color-gray-light1: #ececec;
+
+//
+//  New layout variables
+//  ---------------------------------------------
+
+@layout__max-width-outside: 2000px;
+
+
+//
+//  Letter spacing (new variables in Optimus)
+//  ---------------------------------------------
+
+@default__letter-spacing: normal;
+@h1__letter-spacing: normal;
+@h1__letter-spacing__desktop: @h1__letter-spacing;
+@h2__letter-spacing: normal;
+@h2__letter-spacing__desktop: @h2__letter-spacing;
+@h3__letter-spacing: normal;
+@h3__letter-spacing__desktop: @h3__letter-spacing;
+@h4__letter-spacing: normal;
+@h4__letter-spacing__desktop: @h4__letter-spacing;
+@h5__letter-spacing: normal;
+@h5__letter-spacing__desktop: @h5__letter-spacing;
+@h6__letter-spacing: normal;
+@h6__letter-spacing__desktop: @h6__letter-spacing;
+@blockquote__letter-spacing: normal;
+
+
+//
+//
+// HEADING NEW
+// ---------------------------------------------
+
+@h1__margin-bottom__desktop: @h1__margin-bottom;
+@h2__margin-bottom__desktop: @h2__margin-bottom;
+@h3__margin-bottom__desktop: @h3__margin-bottom;
+@h4__margin-bottom__desktop: @h4__margin-bottom;
+@h5__margin-bottom__desktop: @h5__margin-bottom;
+@h6__margin-bottom__desktop: @h6__margin-bottom;
+
+@h1__margin-top__desktop: @h1__margin-top;
+@h2__margin-top__desktop: @h2__margin-top;
+@h3__margin-top__desktop: @h3__margin-top;
+@h4__margin-top__desktop: @h4__margin-top;
+@h5__margin-top__desktop: @h5__margin-top;
+@h6__margin-top__desktop: @h6__margin-top;
+
+@margin-top-block__extra: 1.5;
+@h1__margin-top-block: 0;
+@h2__margin-top-block: @h2__margin-bottom * @margin-top-block__extra;
+@h3__margin-top-block: @h3__margin-bottom * @margin-top-block__extra;
+@h4__margin-top-block: @h4__margin-bottom * @margin-top-block__extra;
+@h5__margin-top-block: @h5__margin-bottom * @margin-top-block__extra;
+@h6__margin-top-block: @h6__margin-bottom * @margin-top-block__extra;
+
+@h1__margin-top-block__desktop: @h1__margin-top-block;
+@h2__margin-top-block__desktop: @h2__margin-top-block;
+@h3__margin-top-block__desktop: @h3__margin-top-block;
+@h4__margin-top-block__desktop: @h4__margin-top-block;
+@h5__margin-top-block__desktop: @h5__margin-top-block;
+@h6__margin-top-block__desktop: @h6__margin-top-block;
+
+
+//
+//  HEADING CHANGES
+//  ---------------------------------------------
+
+@heading__line-height__base: 1.45;
+
+// @heading__font-family__base: @font-family__special;
+@heading__margin-top__base: 0;
+@heading__margin-bottom__base: @indent__base;
+
+@h1__font-size: 3.2rem;
+@h1__font-size-desktop: 3.4rem;
+@h1__margin-top: @heading__margin-top__base;
+@h1__margin-bottom: 30px;
+@h1__margin-bottom__desktop: @h1__margin-bottom;
+@h1__font-weight: bold;
+// @h1__font-color: @secondary__color;
+
+@h2__font-size: 2.8rem;
+@h2__font-size-desktop: @h2__font-size;
+@h2__margin-top: @heading__margin-top__base;
+@h2__margin-bottom: @heading__margin-bottom__base;
+@h2__font-weight: bold;
+// @h2__font-color: @secondary__color;
+
+@h3__font-size: 2rem;
+@h3__font-size-desktop: @h3__font-size;
+@h3__margin-top: @heading__margin-top__base;
+@h3__margin-bottom: @heading__margin-bottom__base;
+@h3__font-weight: bold;
+// @h3__font-color: @secondary__color;
+
+@h4__font-size: 1.5rem;
+@h4__font-size-desktop: @h4__font-size;
+@h4__margin-top: @heading__margin-top__base;
+@h4__margin-bottom: @heading__margin-bottom__base;
+@h4__font-weight: bold;
+// @h4__font-color: @secondary__color;
+
+@h5__font-size: 1.4rem;
+@h5__font-size-desktop: @h5__font-size;
+@h5__margin-top: @heading__margin-top__base;
+@h5__margin-bottom: @heading__margin-bottom__base;
+@h5__font-weight: bold;
+// @h5__font-color: @secondary__color;
+
+@h6__font-size: 1.3rem;
+@h6__font-size-desktop: @h6__font-size;
+@h6__margin-top: @heading__margin-top__base;
+@h6__margin-bottom: @heading__margin-bottom__base;
+@h6__font-weight: bold;
+// @h6__font-color: @secondary__color;
+
+//
+//  HEADING (new variables in Optimus)
+//  ---------------------------------------------
+
+@h2__font-size-desktop: @h2__font-size;
+@h3__font-size-desktop: @h3__font-size;
+@h4__font-size-desktop: @h4__font-size;
+@h5__font-size-desktop: @h5__font-size;
+@h6__font-size-desktop: @h6__font-size;
+
+@h1__text-transform: none;
+@h1__text-transform__desktop: @h1__text-transform;
+@h2__text-transform: none;
+@h2__text-transform__desktop: @h2__text-transform;
+@h3__text-transform: none;
+@h3__text-transform__desktop: @h3__text-transform;
+@h4__text-transform: none;
+@h4__text-transform__desktop: @h4__text-transform;
+@h5__text-transform: none;
+@h5__text-transform__desktop: @h5__text-transform;
+@h6__text-transform: none;
+@h6__text-transform__desktop: @h6__text-transform;
+
+@h1__inline-link-text-decoration: none;
+@h2__inline-link-text-decoration: none;
+@h3__inline-link-text-decoration: none;
+@h4__inline-link-text-decoration: none;
+@h5__inline-link-text-decoration: none;
+@h6__inline-link-text-decoration: none;
+
+//
+//  Font family
+//  ---------------------------------------------
+
+@blockquote__font-family: @font-family__base;
+
+//
+//  Lists
+//  ---------------------------------------------
+
+@list__margin-bottom: @p__margin-bottom;
+
+
+//
+//  Padding
+//  ---------------------------------------------
+
+@padding-default: 2.2em;
+
+
+//
+//  Messages - links inside messages
+//  ---------------------------------------------
+
+//  Information message -> is shared across message & notice!
+
+@message-info-link__color: @message-info__color;
+@message-info-link__color-hover: darken(@message-info-link__color,10);
+@message-info-link__color-active: @message-info-link__color-hover;
+
+//  Error message
+@message-error-link__color: @error__color;
+@message-error-link__color-hover: darken(@message-error-link__color,10);
+@message-error-link__color-active: @message-error-link__color-hover;
+
+//  Success message
+@message-success-link__color: @message-success__color;
+@message-success-link__color-hover: darken(@message-success-link__color,10);
+@message-success-link__color-active: @message-success-link__color-hover;
+
+
+//
+//  Global notice styling
+//  ---------------------------------------------
+
+@message-global-note__background: @color-yellow-light2;
+@message-global-note__border-color: @color-yellow-light3;
+@message-global-note__color: @text__color;
+
+@message-global-note-link__color: @text__color;
+@message-global-note-link__color-hover: @text__color;
+@message-global-note-link__color-active: @text__color;
+
+
+// Links
+// ---------------------------------------------
+
+@link__text-decoration: underline;
+
+@link__visited__color: @link__color;
+@link__visited__text-decoration: underline;
+
+@link__hover__color: darken(@link__color, 20%);
+@link__hover__text-decoration: underline;
+
+@link__active__color: darken(@link__color, 20%);
+@link__active__text-decoration: underline;
+
+// Main navigation - desktop
+// ---------------------------------------------
+
+@submenu-desktop-item__text-decoration: none;
+
+// Layered navigation - variables copied from Luma
+// ---------------------------------------------
+
+@filter-title-background-color: @color-gray94;
+@filter-link: @color-gray-darken4;
+@filter-link-hover: darken(@filter-link, 30%);
+@filter-quantity: @color-gray46;
+
+@toolbar-background: transparent; // needed in layered navigation
+
+
+//
+//  SE Credits
+//  ---------------------------------------------
+
+@se-credits__color: @link__color;
+@se-credits__text-decoration: none;
+@se-credits__color-hover: #0055FF;
+@se-credits__color-active: @link__active__color;
+@se-credits__color-visited: @link__visited__color;

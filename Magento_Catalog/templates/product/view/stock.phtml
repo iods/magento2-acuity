@@ -1,0 +1,8 @@
+<?php
+$contentblock = $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('product_info_stock')->toHtml();
+if (!empty($contentblock)):
+?>
+<div class="product__info-stock no-row">
+<?= $contentblock; ?>
+</div>
+<?php endif; ?>

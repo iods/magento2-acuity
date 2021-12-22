@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- Add your removes here -->
+        <referenceBlock name="paypal.partner.right.logo" remove="true"/>
+        <referenceBlock name="bml.right.logo" remove="true"/>
+        <referenceBlock name="bml.center.logo" remove="true"/>
+        <referenceBlock name="wish-list-link" remove="true"/>
+        <referenceBlock name="customer-account-navigation-billing-agreements-link" remove="true"/>
+        <referenceBlock name="customer-account-navigation-downloadable-products-link" remove="true"/>
+        <referenceBlock name="sale.reorder.sidebar" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <referenceBlock name="my-account-link" remove="true"/>
+        <referenceBlock name="authorization-link" remove="true"/>
+        <referenceBlock name="register-link" remove="true"/>
+
+        <!-- Head (containing meta tags and favicons) -->
+        <referenceBlock name="head.additional">
+            <block class="Magento\Framework\View\Element\Template" name="favicons" template="Magento_Theme::html/favicons/favicons.phtml" />
+        </referenceBlock>
+
+        <!-- Header (containing USP's -->
+        <referenceContainer name="header.container">
+            <container name="header.top.panel" htmlTag="div" htmlClass="top panel wrapper" before="-">
+                <container name="store.usp.container" htmlTag="div" htmlClass="panel header">
+                    <block class="Magento\Framework\View\Element\Template" name="store.usp" template="Magento_Theme::html/store-usp.phtml" />
+                </container>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Template" name="header_quicklinks" template="Magento_Theme::html/header-quicklinks.phtml" after='-' />
+        </referenceContainer>
+        <referenceBlock name="store.menu">
+            <block class="Magento\Framework\View\Element\Template" name="mobile_quicklinks" template="Magento_Theme::html/header-quicklinks.phtml" after='-' />
+        </referenceBlock>
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Customer\Block\Account\Navigation" name="top.account.link" after="minicart">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+                <block class="Magento\Theme\Block\Html\Header" name="top.account.link.header" before="-">
+                    <arguments>
+                        <argument name="show_part" xsi:type="string">welcome</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+
+        <!-- Navigation (only adds a home icon) -->
+        <referenceBlock name="store.menu">
+            <block class="StudioEmma\Optimus\Block\Html\Topmenu" name="catalog.topnav" template="Magento_Theme::html/topmenu.phtml" ttl="3600" before="-" />
+        </referenceBlock>
+
+        <!-- Footer -->
+        <referenceContainer name="footer" htmlClass="footer content" />
+
+        <!-- After footer (containing copyright, address, payment and languages) -->
+        <referenceContainer name="page.wrapper">
+            <container name="after.footer" htmlTag="div" htmlClass="page bottom up" after="footer-container">
+                <container name="after.footer.content" htmlTag="div" htmlClass="footer content">
+                    <container name="payment.methods" htmlTag="div" htmlClass="payment-methods">
+                        <block class="Magento\Framework\View\Element\Template" name="payment.icons" template="Magento_Theme::html/payment.phtml"/>
+                    </container>
+                </container>
+            </container>
+            <container name="below.after.footer" htmlTag="div" htmlClass="page bottom below" after="footer-container">
+                <container name="below.after.footer.content" htmlTag="div" htmlClass="footer content credits">
+                    <block class="Magento\Theme\Block\Html\Footer" name="copyright" template="Magento_Theme::html/copyright.phtml"/>
+                    <block class="Magento\Framework\View\Element\Template" name="se.credits" after="-" template="Magento_Theme::html/se-logo.phtml" />
+                </container>
+            </container>
+        </referenceContainer>
+
+        <!-- Adds sticky header script -->
+        <!--
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="sticky-header" template="Magento_Theme::html/sticky-header.phtml" before="-" />
+        </referenceContainer>
+        -->
+    </body>
+</page>

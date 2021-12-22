@@ -1,0 +1,22 @@
+<div class="payment-methods__icons">
+<?php if ($sb = $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-methods-icons')->toHtml()) { ?>
+    <?php echo $sb; ?>
+<?php } else { ?>
+    <ul>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/applepay.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/bancontact.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/banktransfer.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/belfius.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/cartebleue.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/ideal.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/klarna.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/maestro.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/mastercard.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/payconiq.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/paypal.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/sofort.svg') ?>" /></li>
+        <li><img alt="" loading="lazy" src="<?= $block->getViewFileUrl('images/payment/visa.svg') ?>" /></li>
+    </ul>
+<?php } ?>
+</div>
+
